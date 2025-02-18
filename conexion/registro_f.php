@@ -35,9 +35,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bind_param("sss", $nombre, $correo, $password);
 
         if ($stmt->execute()) {
-            // Redirigir al login después del registro exitoso
-            header("Location: /..login_farmacia.html");
-            exit(); // Asegurar que el script se detenga después de la redirección
+            header("Location: ../login_farmacia.html");
+            exit(); 
         } else {
             echo "Error al registrar usuario.";
         }
