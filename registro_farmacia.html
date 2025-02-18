@@ -4,26 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
-    <link rel="stylesheet" href="style/">
+    <link rel="stylesheet" href="style/style_farmacia1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 
     <div class="form-container">
         <h2>Registro</h2>
 
-        <form action="conexion/registro_p.php" method="POST">
-            <label for="nombre">Nombre Completo:</label>
-            <input type="text" id="nombre" name="nombre" required>
-
-            <label for="correo">Correo Electrónico:</label>
-            <input type="email" id="correo" name="correo" required>
+        <form action="conexion/registro_f.php" method="POST">
             
-            <label for="password">Contraseña:</label>
-            <input type="password" id="password" name="password" required>
+            <div class="input-container">
+                <i class="fas fa-user"></i>
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre Completo" required>
+            </div>
 
-            <button type="submit">Registrarse</button>
+            <div class="input-container">
+                <i class="fas fa-envelope"></i>
+                <input type="email" id="correo" name="correo" placeholder="Correo Electrónico" required>
+            </div>
 
-            <p>¿Ya tienes una cuenta? <a href="login_parqueadero.html">Inicia sesión</a></p>
+            <div class="input-container">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="password" name="password" placeholder="Contraseña" required>
+            </div>
+
+            <button type="submit"><i class="fas fa-user-plus"></i> Registrarse</button>
+
+            <p>¿Ya tienes una cuenta? <a href="login_farmacia.html">Inicia sesión</a></p>
         </form>
     </div>
 

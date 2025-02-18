@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar Sesión</title>
-    <link rel="stylesheet" href="style/">
+    <link rel="stylesheet" href="style/style_farmacia2.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 
     <div class="login-container">
         <h2>Iniciar Sesión</h2>
 
-        <form action="conexion/login_p.php" method="POST">
-            <label for="username">Nombre de Usuario:</label>
+        <form action="login_f.php" method="POST">
+            <label for="username">Correo Electrónico:</label>
             <input type="text" id="username" name="username" required>
 
             <label for="password">Contraseña:</label>
@@ -21,8 +22,36 @@
             <button type="submit">Ingresar</button>
         </form>
 
-        <p>¿No tienes cuenta? <a href="registro_parqueadero.html">Regístrate aquí</a></p>
+        <p>¿No tienes cuenta? <a href="registro_farmacia.html">Regístrate aquí</a></p>
     </div>
+
+    <script>
+        // Obtener mensaje desde la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const mensaje = urlParams.get('mensaje');
+
+        if (mensaje === "exito") {
+            Swal.fire({
+                title: "¡Inicio de sesión exitoso!",
+                icon: "success",
+                draggable: true
+            });
+        } else if (mensaje === "error_clave") {
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Contraseña incorrecta",
+                footer: '<a href="#">¿Olvidaste tu contraseña?</a>'
+            });
+        } else if (mensaje === "error_usuario") {
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "El correo ingresado no está registrado",
+                footer: '<a href="#">¿Necesitas ayuda?</a>'
+            });
+        }
+    </script>
 
 </body>
 </html>
